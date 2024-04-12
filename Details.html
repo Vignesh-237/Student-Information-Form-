@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Information</title>
+    <style>
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 9999;
+        }
+
+        .popup-content {
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 300px;
+            padding: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="student">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" name="name" placeholder="enter name" id="nameInp"  required>  <!--pattern="[a-zA-Z]{3,}"-->
+        </div>
+        <div>
+            <label for="mobile">Mobile:</label>
+            <input type="tel" name="mobile" placeholder="enter phone" id="phoneInp" pattern="[6-9]{1}[0-9]{9}" required>
+        </div>
+        <div>
+            <label for="dob">DOB:</label>
+            <input type="date" name="dob" id="dateInp" required>
+        </div>
+        <div>
+            <label for="age">Age:</label>
+            <input type="number" name="age" placeholder="age" id="ageInp">
+        </div>
+        <div>
+            <label for="address">Address:</label>
+            <textarea name="address" cols="30" rows="5" id="addressInp" required></textarea>
+        </div>
+        <div>
+            <label for="district">District:</label>
+            <select name="district" id="district" required>
+                <option value="">--select district--</option>
+                <option value="chennai">Chennai</option>
+                <option value="Salem">Salem</option>
+                <option value="Coimbatore">Coimbatore</option>
+            </select>
+        </div>
+        <div>
+            <label for="taluk">Taluk:</label>
+            <select name="taluk" id="taluk" required>
+                <option value="">--select taluk--</option>
+            </select>
+        </div>
+        <div>
+            <label for="village">Village:</label>
+            <select name="village" id="village" required>
+                <option value="">--select village--</option>
+            </select>
+        </div>
+
+        <!-- mark and subjects -->
+        <div>
+            <label for="sub1">English : </label>
+            <input type="number" name="sub1" placeholder="enter sub1 marks" id="sub1Val">
+            <span id="storeSub1"></span>
+        </div>
+        <div>
+            <label for="sub2">Mathematics : </label>
+            <input type="number" name="sub2" placeholder="enter sub2 marks" id="sub2Val">
+            <span id="storeSub2"></span>
+        </div>
+        <div>
+            <label for="Sub3">Physics : </label>
+            <input type="number" name="sub3" placeholder="enter sub3 marks" id="sub3Val">
+            <span id="storeSub3"></span>
+        </div>
+        <div>
+            <label for="sub4">Chemistry : </label>
+            <input type="number" name="sub4" placeholder="enter sub4 marks" id="sub4Val">
+            <span id="storeSub4"></span>
+        </div>
+        <div>
+            <label for="sub5">Computer Science : </label>
+            <input type="number" name="sub5" placeholder="enter sub5 marks" id="sub5Val">
+            <span id="storeSub5"></span>
+        </div>
+        <div>
+            <input type="submit" value="submit" id="submitInp">
+        </div>
+    </form>
+
+    <div>
+        <h1 id="totalVal"></h1>
+        <h1 id="averageVal"></h1>
+        <h1 id="ackValue"></h1>
+    </div>
+    <a href="./FetchStudent.html">Details Page</a>
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span id="close" onclick="closePopUp()">&times;</span>
+            <p id="pop">This is a popup!</p>
+        </div>
+    </div>
+
+    <script src="./studentscript.js">  </script>
+</body>
+
+</html>
