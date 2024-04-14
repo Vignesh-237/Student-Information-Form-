@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Information</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body id="regformBody" class="student regForm">
+
+    <header id="regHead">
+        <h2 id="regH2">STUDENT REGISTRATION FORM</h2>
+    </header>
+
+    <main id="regMain">
+        <form action="student" id="regForm">
+            <div id="regName">
+                <label for="name">Name:</label>
+                <input type="text" name="name" placeholder="enter name" pattern="[A-Za-z. ]*" id="nameInp" required>
+                <!--pattern="[a-zA-Z]{3,}"-->
+            </div>
+            <div id="regMobile">
+                <label for="mobile">Mobile:</label>
+                <input type="tel" name="mobile" placeholder="enter phone" pattern="[6-9]{1}[0-9]{9}" id="phoneInp" 
+                    required>
+            </div>
+            <div id="regDob">
+                <label for="dob">DOB:</label>
+                <input type="date" name="dob" id="dateInp" required>
+            </div>
+            <div id="regAge">
+                <label for="age">Age:</label>
+                <input type="number" name="age" placeholder="age" pattern="[0-9]{2}" id="ageInp">
+            </div>
+            <div id="regAddress">
+                <label for="address">Address:</label>
+                <textarea name="address" cols="30" rows="5" id="addressInp" pattern="[A-Za-z!@#$%^&*()-_=+{}[\]|;:',./?\\&quot;&lt;&gt;]*"
+                id="regAddressInp" required></textarea>
+            </div>
+            <div id="regDistrict">
+                <label for="district">District:</label>
+                <select name="district" id="district" required>
+                    <option value="">----select district----</option>
+                    <option value="chennai">Chennai</option>
+                    <option value="Salem">Salem</option>
+                    <option value="Coimbatore">Coimbatore</option>
+                </select>
+            </div>
+            <div id="regTaluk">
+                <label for="taluk">Taluk:</label>
+                <select name="taluk" id="taluk" required>
+                    <option value="">----select taluk----</option>
+                </select>
+            </div>
+            <div id="regVillage">
+                <label for="village">Village:</label>
+                <select name="village" id="village" required>
+                    <option value="">----select village----</option>
+                </select>
+            </div>
+
+            <!-- mark and subjects -->
+            <secttion id="subjects">
+                <div id="sub1English">
+                    <label for="sub1">English : </label>
+                    <input type="number" name="sub1" placeholder="enter sub1 mark" id="sub1Val">
+                    <span id="storeSub1"></span>
+                </div>
+                <div id="sub2Mathematics">
+                    <label for="sub2">Mathematics : </label>
+                    <input type="number" name="sub2" placeholder="enter sub2 mark" id="sub2Val">
+                    <span id="storeSub2"></span>
+                </div>
+                <div id="sub3Physics">
+                    <label for="Sub3">Physics : </label>
+                    <input type="number" name="sub3" placeholder="enter sub3 mark" id="sub3Val">
+                    <span id="storeSub3"></span>
+                </div>
+                <div id="sub4Chemistry">
+                    <label for="sub4">Chemistry : </label>
+                    <input type="number" name="sub4" placeholder="enter sub4 mark" id="sub4Val">
+                    <span id="storeSub4"></span>
+                </div>
+                <div id="sub5ComputerScience">
+                    <label for="sub5">Computer Science : </label>
+                    <input type="number" name="sub5" placeholder="enter sub5 mark" id="sub5Val">
+                    <span id="storeSub5"></span>
+                </div>
+            </secttion>
+            <div>
+                <input type="submit" value="submit" id="submitInp">
+            </div>
+        </form>
+
+    </main>
+
+    <footer id="regFoot">
+        <div>
+            <h1 id="totalVal"></h1>
+            <h1 id="averageVal"></h1>
+            <h1 id="ackValue"></h1>
+        </div>
+    </footer>
+    <a href="./FetchStudent.html" id="regLogin">Login</a>
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span id="close" onclick="closePopUp()">&times;</span>
+            <p id="pop">This is a popup!</p>
+        </div>
+    </div>
+
+    <script src="./FormRegistration.js">  </script>
+</body>
+
+</html>
