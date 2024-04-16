@@ -1,0 +1,634 @@
+/* pop up screen*/
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+}
+
+.popup-content {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 500px;
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+/* Common for login page, Registered Form data, form registration */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.student {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(#ffffff, #F5F3E7, #f5f0d6);
+    /* background-color: #000080;  #CDF6EF */
+    /* background-color: #F5F3E7; */
+    background-repeat: no-repeat;
+    display: flex;
+}
+
+#loginBody, #regformBody, #outFormBody {
+    /* justify-content: flex-end; */
+    justify-content: center;
+}
+
+/* login page */
+#sectionForm {
+    width: 50%;
+    height: 65vh;
+    margin: 120px;
+    /* background-color: #c90000; */
+    background-image: linear-gradient(#f8f8f3,#faf5d3);
+    border: none;
+    /* border-style: solid; */
+    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    outline-style: solid;
+    outline-color: #0000000b;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+#sectionForm:hover{
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.5);
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+}
+#sectionForm > #formHead {
+    margin: 40px 0px 0px 30px;
+    font-size: 40px;
+    font-weight: initial;
+    justify-content: center;
+    align-items: center;
+    color: #000000;
+}
+
+#loginForm > #formPara {
+    color: black;
+    font-weight: 648;
+    margin: 40px 30px 7px;
+}
+
+#loginForm > #studentInp {
+    width: 700px;
+    height: 50px;
+    margin: 0px 30px 0px;
+    font-size: 20px;
+    /* Optionally adjust font size */
+    padding: 5px 20px 10PX;
+    border-radius: 5px;
+    border: none;
+    outline-style: solid;
+    outline-color: #0000000b;
+    transition: all 0.3s ease;
+    /* border-style: solid; */
+    /* border-color: black; */
+}
+
+#loginForm > #studentInp:hover {
+    border-radius: 5px;
+    outline-style: solid;
+    outline-color: #109abd;
+    transition: all 0.3s ease;
+}
+
+#loginForm > input#studentInp::placeholder {
+    font-size: 17px;
+    color: #2e2d2db3;
+}
+
+/* #loginForm > #studentInp:focus{
+    color: #000;
+    border: none;
+    border-color: #109abd;
+} */
+#loginForm > #studentInp:focus {
+    color: #000;
+    outline: 3px solid #109abd;
+    /* Change the outline color */
+}
+
+#loginForm > #loginBtn {
+    width: 700px;
+    /* Set the width */
+    height: 50px;
+    /* Set the height */
+    font-size: 20px;
+    /* Optionally adjust font size */
+    padding: 0px 10px;
+    margin: 20px 30px 0px;
+    border-radius: 5px;
+    border: none;
+    background-color: #109abdbe;
+    position: relative;
+    color: #fff;
+    font-weight: normal;
+    transition: all 0.3s ease;
+}
+#loginForm > #loginBtn:hover {
+    color: rgba(255, 255, 255, 0.878);
+    background-color: #109abd;
+    transition: all 0.3s ease;
+}
+#loginForm > #loginBtn > #btnLoginLink{
+    text-decoration: none;
+    color: white;
+}
+#sectionForm > #regHead {
+    margin: 70px 0px 0px 180px;
+    color: black;
+    font-weight: normal;
+}
+
+#sectionForm > #regHead > #regFormLink {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-decoration: none;
+    color: #109abd;
+}
+#sectionForm > #regHead > #regFormLink:hover {
+    text-decoration: none;
+    color: #109abd;
+    text-shadow: 0px 0px 0.5px #00ccff;
+}
+
+#sectionForm > #regHead > #regFormLink:active {
+    color: orange;
+}
+/* #sectionForm > #regHead > #regFormLink:visited{
+    color: violet;
+} */
+#sectionForm > #regHead > #regFormLink::selection {
+    color: #ffffff;
+    background-color: #000000;
+}
+
+
+/* Output - Registered Form data*/
+/* *{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+} */
+
+/* #outFormBody {
+    justify-content: center;
+} */
+#outLogOutButton {
+    align-self: flex-start; /* Ensure button aligns to the top within the flex container */
+}
+#outLogOutButton > #outA {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 17px;
+    padding: 2px 10px 5px 10px;
+    z-index: 9999;  /* Ensure it's above other elements */
+    color: #fff;
+    background-color: #1a9fddbf;
+    /* border-style: solid; */
+    border: none;
+    border-radius: 20px;
+    /* outline-style: solid;
+    outline-color: #554646ae; */
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+#outLogOutButton > #outA:hover {
+    color: white;
+    background-color: #1a9fdd;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+}
+#outMainForm{
+    width: 50%;
+    height: 92vh;
+    margin-top: 30px;
+    border: none;
+    background-color: #fffffff0;
+    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+#outMainForm:hover {
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.6);
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+}
+#outMainForm > #outH1{
+    margin: 35px 90px 0px 90px;
+    font-size: 40px;
+    font-weight: initial;
+    /* justify-content: center;
+    align-items: center; */
+    color: #000000;
+}
+/* name, ack number, dob, age, address, phone number*/
+#outMainForm > #outStudentForm > h3 {
+    margin: 10px 0px 0px 40px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #000;
+}
+/* District, Taluk, Village */
+#outMainForm > #outStudentForm > #outDistrict,
+#outMainForm > #outStudentForm > #outTaluk,
+#outMainForm > #outStudentForm > #outVillage {
+    display: inline-block;
+    margin-left: 40px;
+}
+/* Table */
+#outMainForm > #outStudentForm > table#outTable {
+    margin: 20px 0px 0px 70px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #000;
+    border-collapse: collapse;
+    width: 80%;
+}
+#outMainForm > #outStudentForm > table#outTable th,
+#outMainForm > #outStudentForm > table#outTable td {
+    border: 1px solid #000;
+    padding: 2px;
+    text-align: left;
+}
+#outMainForm > #outStudentForm > table#outTable th {
+    background-color: #1a9fdd58;
+}
+#outMainForm > #outStudentForm > #outTable > #outTableBody > tr > #outTotalMarkBody {
+    background-color: #d7e2087d;
+}
+/* Average */
+#outMainForm > #outStudentForm > #outAverage {
+    margin: 10px 0px 0px 75px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #000;
+}
+
+
+/*form registration */
+
+/* *{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+} */
+
+#regformBody {
+    justify-content: flex-start;
+    flex-direction: column;
+}
+#regHead > #regH2{
+    margin: 25px 0px 0px 500px;
+    font-size: 35px;
+    font-weight: 400;
+    justify-content: center;
+    color: #000000;
+}
+#regMain {
+    width: 90%;
+    height: 100vh;
+    margin: 20px 0px 0px 105px;
+    /* border-style: solid; */
+}
+#regMain > #regForm div {
+    margin: 15px 0px 0px 0px;
+}
+#regMain > #regForm > #regDropDown {
+    margin: 15px 0px 0px 0px;
+}
+#regMain > #regForm div > label{
+    font-size: 20px;
+    font-style: normal;
+    margin-right: 10px;
+}
+#regMain > #regForm div > input{
+    width: 400px;
+    height: 40px;
+    /* border: none; */
+    font-size: 17px;
+    padding: 10px;
+    text-align: center;
+    background-color: white;
+    border-radius: 5px;
+    border: none;
+    outline-style: solid;
+    overflow: hidden;
+    outline-color: #0000000b;
+    transition: all 0.3s ease;   
+}
+#regMain > #regForm div > input:hover{
+    border-radius: 5px;
+    outline-style: solid;
+    outline-color: #109abd;
+    transition: all 0.3s ease;
+}
+#regMain > #regForm div > #dateInp{
+    width: 400px;
+    height: 40px;
+    text-align: center;
+    font-size: 15px;
+    overflow: hidden;
+    border-radius: 3px;
+    background-color: white;
+}
+#regMain > #regForm > div > textarea{
+    width: 1070px;
+    height: 60px;
+    padding: 15px;
+    font-size: 17px;
+    margin-left: 26px;
+    background-color: white;
+    border-radius: 5px;
+    border: none;
+    outline-style: solid;
+    overflow: auto;
+    outline-color: #0000000b;
+    transition: all 0.3s ease;
+}
+#regMain > #regForm > div > textarea:hover{
+    border-radius: 5px;
+    outline-style: solid;
+    outline-color: #109abd;
+    transition: all 0.3s ease;
+}
+#regMain > #regForm div > select {
+    width: 250px;
+    height: 30px;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    outline-style: solid;
+    overflow: hidden;
+    outline-color: #0000000b;
+    transition: all 0.3s ease;
+}
+#regMain > #regForm div > select:hover{
+    border-radius: 5px;
+    outline-style: solid;
+    outline-color: #109abd;
+    transition: all 0.3s ease;
+}
+#regMain > #regForm div > input::placeholder{
+    width: 350px;
+    height: 30px;
+    color: #000000aa;
+    font-weight: 500;
+}
+#regMain > #regForm > #regName label{
+    position: relative;
+    margin-left: 40px;
+    top: 5px;
+}
+#regMain > #regForm > #regName input{
+    position: absolute;
+    margin-left: 10px;
+}
+#regMain > #regForm > #regMobile label{
+    position: relative;
+    left: 300px;
+    top: 5px;
+}
+#regMain > #regForm > #regMobile input{
+    position: absolute;
+    right: 248px;
+}
+#regMain > #regForm > #regName ,
+#regMain > #regForm > #regMobile {
+    display: inline-block;
+    margin: 10px 0px 0px 0px;
+}
+#regMain > #regForm > #regMobile label{
+    margin-left: 280px;
+}
+
+#regMain > #regForm > #regDob {
+    display: block;
+    margin-top: 40px;
+}
+
+#regMain > #regForm > #regDob label{
+    position: relative;
+    margin-left: 52px;
+    top: 3px;
+}
+#regMain > #regForm > #regDob input{
+    position: absolute;
+    margin-left: 10px;
+}
+#regMain > #regForm > #regAge {
+    display: inline-block;
+    margin-top: 10px;
+}
+#regMain > #regForm > #regAge label{
+    position: relative;
+    bottom: 30px;
+    right: -17px;
+    /* margin-left: 52px; */
+}
+#regMain > #regForm > #regAge input{
+    position: absolute;
+    margin-top: -35px;
+    right: 250px;
+}
+#regMain > #regForm > #regDob
+#regMain > #regForm > #regDob {
+    display: block;
+    margin: 10px 0px 0px 0px;
+}
+#regMain > #regForm > #regAge{
+    display: inline-block;
+    margin-left: 700px;
+}
+
+#regMain > #regForm > #regAddress label{
+    position: relative;
+    top: -25px;
+    left: 20px;
+}
+
+/*district -- taluk -- village*/
+#regMain > #regForm > #regDistrict,
+#regMain > #regForm > #regTaluk,
+#regMain > #regForm > #regVillage {
+    display: inline-block;
+    margin-top: 20px;
+}
+#regMain > #regForm > #regTaluk,
+#regMain > #regForm > #regVillage {
+    display: inline;
+    margin-left: 85px;
+}
+#regMain > #regForm > #regDistrict{
+    margin-left: 34px;
+}
+
+/*subjects*/
+#regMain > #regForm > #subjects{
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center content */
+    /* align-items: center; Horizontally center content */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#regMain > #regForm > #subjects div{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 10px 0px 10px 0px;
+}
+#regMain > #regForm > #subjects #sub1English{
+    margin-top: 25px;
+}
+#regMain > #regForm > #subjects label{
+    width: 430px; /* Adjust width as needed */
+    text-align: right;
+    margin-right: 10px;
+    position: relative;
+}
+#regMain > #regForm > #subjects input{
+    position: absolute;
+    margin-left: 460px;
+    text-align: center;
+}
+/* #regMain > #regForm > #subjects > div > input {
+    margin-right: 10px; /* Adjust margin as needed 
+} */
+
+#regMain > #regForm > #subjects > div span{
+    position: absolute;
+    font-size: 20px;
+    margin-left: 870px;
+    margin-top: 5px;
+}
+#regMain > #regForm > #subjects > #sub1English > #storeSub1P,
+#regMain > #regForm > #subjects > #sub2Mathematics > #storeSub2P,
+#regMain > #regForm > #subjects > #sub3Physics > #storeSub3P,
+#regMain > #regForm > #subjects > #sub4Chemistry > #storeSub4P,
+#regMain > #regForm > #subjects > #sub5ComputerScience > #storeSub5P {
+    color: green;
+}
+#regMain > #regForm > #subjects > #sub1English > #storeSub1F,
+#regMain > #regForm > #subjects > #sub2Mathematics > #storeSub2F,
+#regMain > #regForm > #subjects > #sub3Physics > #storeSub3F,
+#regMain > #regForm > #subjects > #sub4Chemistry > #storeSub4F,
+#regMain > #regForm > #subjects > #sub5ComputerScience > #storeSub5F {
+    color: red;
+}
+
+#regMain > #regForm #submitInp{
+    justify-content: center;
+    margin-left: 605px;
+    width: 100px;
+    font-size: 17px;
+    padding: 2px 10px 5px 10px;
+    margin-top: 2px;
+    color: #fff;
+    background-color: #1a9fddbf;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+#regMain > #regForm #submitInp:hover {
+    color: white;
+    background-color: #1a9fdd;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+}
+
+#regFoot > div{
+    margin-top: -60px;
+    font-size: 25px;
+    font-weight: normal;
+}
+
+#regFoot > div #totalVal, #averageVal, #ackValue{
+    display: inline-block;
+    font-size: 25px;
+    font-weight: bolder;
+}
+#regFoot > div #totalVal{
+    margin-left: 230px !important;
+}
+#regFoot > div #averageVal, #ackValue{
+    margin-left: 60px;
+}
+#regFoot > div #ackValue{
+    margin-left: 80px;
+}
+#regLogin{ 
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 100px;
+    font-size: 17px;
+    padding: 2px 10px 5px 27px;
+    z-index: 9999;  /* Ensure it's above other elements */
+    color: #fff;
+    background-color: #1a9fddbf;
+    border: none;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+#regLogin:hover{
+    color: white;
+    background-color: #1a9fdd;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+}
+#regNewFormBtn{ 
+    position: fixed;
+    top: 60px;
+    right: 20px;
+    width: 100px;
+    font-size: 17px;
+    padding: 2px 10px 5px 10px;
+    z-index: 9999;  /* Ensure it's above other elements */
+    color: #fff;
+    background-color: #1a9fddbf;
+    border: none;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+#regNewFormBtn:hover{
+    color: white;
+    background-color: #1a9fdd;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+}
